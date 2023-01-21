@@ -191,7 +191,7 @@ class Diagram:
     def to_file(self, output: Path):
         if not output:
             raise ValueError("Missing output location!")
-        uml_file = Path(self._proto_module.__file__).stem
+        uml_file = Path(self._proto_module.__name__)
         self._rendered_filename = str(output.joinpath(uml_file))
         return self
 
